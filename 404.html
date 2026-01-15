@@ -1,195 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <title>404 - Page not found</title>
-    <meta
-      name="description"
-      content="Page not found. Check the address and try again."
-    >
-    <style>
-      :root {
-        --hs-404-ink: #1f2328;
-        --hs-404-muted: #4b5563;
-        --hs-404-line: rgba(31, 35, 40, 0.14);
-        --hs-404-paper: rgba(255, 255, 255, 0.92);
-        --hs-404-warm: #f2b95f;
-        --hs-404-cool: #8bc8c4;
-        --hs-404-shadow: rgba(15, 23, 42, 0.22);
-      }
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suominettipelit | 404</title>
+  <meta name="description" content="We could not find that page.">
+  <link rel="icon" href="favicon.ico">
+  <style>
 
-      * {
-        box-sizing: border-box;
-      }
+    @font-face {
+      font-family: "Happy Vibes";
+      src: url("happy-vibes-happy-vibes-svg-400.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Happy Vibes Outline";
+      src: url("happy-vibes-happy-vibes-outline-svg-400.otf") format("opentype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    :root {
+      --bg: #f6f1e7;
+      --ink: #1c1a15;
+      --muted: #6a5f52;
+      --accent: #e55a3d;
+      --teal: #0f818a;
+      --gold: #f2c94c;
+      --line: #e7d7c7;
+      --shadow: 0 18px 40px rgba(20, 16, 10, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      color: var(--ink);
+      background: radial-gradient(circle at top, #fff5e6 0%, #f6f1e7 55%, #f0e5d8 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(240px 240px at 15% 20%, rgba(15, 129, 138, 0.16), transparent 70%),
+        radial-gradient(260px 260px at 85% 15%, rgba(242, 201, 76, 0.2), transparent 72%);
+    }
+    h1 {
+      font-family: "Happy Vibes", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    .nf4-wrap-8k2m9p { width: 100%; }
+    .nf4-card-3v7c1q {
+      max-width: 520px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: grid;
+      gap: 12px;
+    }
+    .nf4-kicker-4n1d8b {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .nf4-note-6s9f2l {
+      color: var(--muted);
+      border-left: 3px solid var(--gold);
+      padding-left: 10px;
+      font-size: 0.9rem;
+    }
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        color: var(--hs-404-ink);
-        background:
-          radial-gradient(1100px 520px at 15% 10%, rgba(242, 185, 95, 0.35), transparent 60%),
-          radial-gradient(1000px 620px at 85% 80%, rgba(139, 200, 196, 0.35), transparent 65%),
-          linear-gradient(160deg, #f7f2e9 0%, #eef4f2 55%, #f8efe2 100%);
-        font-family: "Avenir Next", "Futura", "Gill Sans", "Trebuchet MS", sans-serif;
-      }
-
-      .hs-404-stage {
-        position: relative;
-        width: min(720px, 100%);
-      }
-
-      .hs-404-orbit {
-        position: absolute;
-        inset: -28px;
-        border-radius: 28px;
-        border: 1px dashed var(--hs-404-line);
-        transform: rotate(-2deg);
-        animation: slow-spin 26s linear infinite;
-        pointer-events: none;
-      }
-
-      .hs-404-orbit::before,
-      .hs-404-orbit::after {
-        content: "";
-        position: absolute;
-        border-radius: 999px;
-        filter: blur(1px);
-        opacity: 0.7;
-      }
-
-      .hs-404-orbit::before {
-        width: 140px;
-        height: 140px;
-        top: -30px;
-        left: 12%;
-        background: radial-gradient(circle, rgba(242, 185, 95, 0.45), transparent 65%);
-        animation: drift 9s ease-in-out infinite;
-      }
-
-      .hs-404-orbit::after {
-        width: 190px;
-        height: 190px;
-        bottom: -50px;
-        right: 8%;
-        background: radial-gradient(circle, rgba(139, 200, 196, 0.45), transparent 65%);
-        animation: drift 11s ease-in-out infinite reverse;
-      }
-
-      .hs-404-card {
-        position: relative;
-        padding: 36px 38px;
-        border-radius: 22px;
-        background: var(--hs-404-paper);
-        border: 1px solid rgba(31, 35, 40, 0.08);
-        box-shadow: 0 24px 60px var(--hs-404-shadow);
-        backdrop-filter: blur(6px);
-        animation: rise-in 700ms ease-out both;
-      }
-
-      .hs-404-code {
-        display: inline-block;
-        padding: 6px 14px;
-        border-radius: 999px;
-        background: rgba(31, 35, 40, 0.08);
-        font-weight: 600;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        font-size: 0.78rem;
-      }
-
-      .hs-404-title {
-        margin: 18px 0 8px;
-        font-size: clamp(2.1rem, 4vw, 2.8rem);
-        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-        letter-spacing: 0.02em;
-      }
-
-      .hs-404-text {
-        margin: 0 0 14px;
-        line-height: 1.65;
-        color: var(--hs-404-muted);
-      }
-
-      .hs-404-meta {
-        margin-top: 18px;
-        padding-top: 14px;
-        border-top: 1px solid var(--hs-404-line);
-        font-size: 0.9rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--hs-404-muted);
-      }
-
-      @keyframes rise-in {
-        from {
-          opacity: 0;
-          transform: translateY(16px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes slow-spin {
-        from {
-          transform: rotate(-2deg);
-        }
-        to {
-          transform: rotate(358deg);
-        }
-      }
-
-      @keyframes drift {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(10px);
-        }
-      }
-
-      @media (max-width: 640px) {
-        body {
-          padding: 18px;
-        }
-
-        .hs-404-card {
-          padding: 28px 26px;
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .hs-404-orbit,
-        .hs-404-orbit::before,
-        .hs-404-orbit::after,
-        .hs-404-card {
-          animation: none;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <div class="hs-404-stage">
-      <div class="hs-404-orbit" aria-hidden="true"></div>
-      <main class="hs-404-card">
-        <span class="hs-404-code">Error 404</span>
-        <h1 class="hs-404-title">Page not found</h1>
-        <p class="hs-404-text">
-          The page you are looking for is not here. It may have been moved, renamed, or typed
-          incorrectly.
-        </p>
-        <p class="hs-404-text">
-          Double-check the address and try again.
-        </p>
-        <div class="hs-404-meta">No links available on this page</div>
-      </main>
+    .nf4-cookie-7q3m8t {
+      position: fixed;
+      inset: auto 16px 16px 16px;
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      z-index: 30;
+    }
+    .nf4-cookiein-5j1c6r {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      color: var(--muted);
+    }
+    .nf4-cookieactions-9p4d7h {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .nf4-cookieactions-9p4d7h button {
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      background: transparent;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .nf4-cookieactions-9p4d7h button:first-child {
+      background: var(--teal);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <main class="nf4-wrap-8k2m9p">
+    <div class="nf4-card-3v7c1q">
+      <p class="nf4-kicker-4n1d8b">404</p>
+      <h1>This room does not exist</h1>
+      <p>We could not find that page. Check the address and try again.</p>
+      <p class="nf4-note-6s9f2l">Practice-only site. 18+ only.</p>
     </div>
-  </body>
+  </main>
+
+  <div class="nf4-cookie-7q3m8t" data-cookie-banner role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <div class="nf4-cookiein-5j1c6r">
+      <p>We use a small cookie to remember your choice and keep the site steady.</p>
+      <div class="nf4-cookieactions-9p4d7h">
+        <button type="button" data-cookie-accept>Accept</button>
+        <button type="button" data-cookie-decline>Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Simple page interaction: cookie consent banner.
+    (() => {
+      // Cookie banner: remember the choice in localStorage.
+      const banner = document.querySelector("[data-cookie-banner]");
+      const acceptBtn = document.querySelector("[data-cookie-accept]");
+      const declineBtn = document.querySelector("[data-cookie-decline]");
+      if (banner) {
+        const choice = localStorage.getItem("snp_cookie_choice");
+        if (choice) {
+          banner.setAttribute("hidden", "");
+        } else {
+          banner.removeAttribute("hidden");
+        }
+        const setChoice = (value) => {
+          localStorage.setItem("snp_cookie_choice", value);
+          banner.setAttribute("hidden", "");
+        };
+        if (acceptBtn) acceptBtn.addEventListener("click", () => setChoice("accepted"));
+        if (declineBtn) declineBtn.addEventListener("click", () => setChoice("declined"));
+      }
+    })();
+  </script>
+</body>
 </html>
